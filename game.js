@@ -9,6 +9,11 @@ const startButton = document.getElementById('start-game');
 const returnButton = document.getElementById('return-menu');
 const showHighscoreButton = document.getElementById('show-highscore');
 const highScoreElement = document.getElementById('high-score');
+// Nouveaux éléments pour les contrôles tactiles
+const upButton = document.getElementById('up-btn');
+const downButton = document.getElementById('down-btn');
+const leftButton = document.getElementById('left-btn');
+const rightButton = document.getElementById('right-btn');
 
 // Configuration du jeu
 const gridSize = 20;
@@ -55,7 +60,60 @@ showHighscoreButton.addEventListener('click', () => {
 
 difficultySelect.addEventListener('change', updateHighScoreDisplay);
 
+// Gestion des contrôles clavier
 document.addEventListener('keydown', changeDirection);
+
+// Gestion des contrôles tactiles
+upButton.addEventListener('click', () => {
+    if (dy !== 1) { dx = 0; dy = -1; }
+});
+
+downButton.addEventListener('click', () => {
+    if (dy !== -1) { dx = 0; dy = 1; }
+});
+
+leftButton.addEventListener('click', () => {
+    if (dx !== 1) { dx = -1; dy = 0; }
+});
+
+rightButton.addEventListener('click', () => {
+    if (dx !== -1) { dx = 1; dy = 0; }
+});
+
+// Gestion des swipes
+let touchStartX = 0;
+let touchStartY = 0;
+
+canvas.addEventListener('touchstart', (e) => {
+    touchStartX = e.touches[0].clientX;
+    touchStartY = e.touches[0].clientY;
+    e.preventDefault();
+});
+
+canvas.addEventListener('touchmove', (e) => {
+    e.preventDefault(); // Empêche le défilement de la page
+});
+
+canvas.addEventListener('touchend', (e) => {
+    const touchEndX = e.changedTouches[0].clientX;
+    const touchEndY = e.changedTouches[0].clientY;
+    
+    const deltaX = touchEndX - touchStartX;
+    const deltaY = touchEndY - touchStartY;
+    
+    // Détermine la direction du swipe
+    if (Math.abs(deltaX) > Math.abs(deltaY)) {
+        // Mouvement horizontal
+        if (deltaX > 0 && dx !== -1) { dx = 1; dy = 0; }  // Droite
+        else if (deltaX < 0 && dx !== 1) { dx = -1; dy = 0; }  // Gauche
+    } else {
+        // Mouvement vertical
+        if (deltaY > 0 && dy !== -1) { dx = 0; dy = 1; }  // Bas
+        else if (deltaY < 0 && dy !== 1) { dx = 0; dy = -1; }  // Haut
+    }
+    
+    e.preventDefault();
+});
 
 // Fonctions du jeu
 function changeDirection(event) {

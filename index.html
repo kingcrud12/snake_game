@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Jeu Snake</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -31,6 +32,18 @@
                 <p>Meilleur Score: <span id="high-score">0</span></p>
             </div>
             <button id="return-menu">Retour au menu</button>
+            
+            <!-- Nouveaux contrôles tactiles -->
+            <div class="touch-controls">
+                <button id="up-btn">⬆️</button>
+                <div class="horizontal-controls">
+                    <button id="left-btn">⬅️</button>
+                    <button id="right-btn">➡️</button>
+                </div>
+                <button id="down-btn">⬇️</button>
+            </div>
+            
+            <!-- Instructions clavier (masquées sur mobile) -->
             <div class="controls">
                 <p>Utilisez les flèches pour jouer ⬅️ ➡️ ⬆️ ⬇️</p>
             </div>
