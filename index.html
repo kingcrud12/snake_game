@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Jeu Snake</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>Snake Game</h1>
+        
+        <!-- Menu principal -->
+        <div id="main-menu">
+            <div class="difficulty-selector">
+                <label for="difficulty">Difficulté:</label>
+                <select id="difficulty">
+                    <option value="easy">Facile</option>
+                    <option value="medium">Moyen</option>
+                    <option value="hard">Difficile</option>
+                </select>
+            </div>
+            <button id="start-game">Démarrer</button>
+            <button id="show-highscore">Meilleur Score</button>
+        </div>
+
+        <!-- Zone de jeu -->
+        <div id="game-area" style="display: none;">
+            <canvas id="gameCanvas" width="400" height="400"></canvas>
+            <div class="score-container">
+                <p>Score actuel: <span id="score">0</span></p>
+                <p>Meilleur Score: <span id="high-score">0</span></p>
+            </div>
+            <button id="return-menu">Retour au menu</button>
+            <div class="controls">
+                <p>Utilisez les flèches pour jouer ⬅️ ➡️ ⬆️ ⬇️</p>
+            </div>
+        </div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>

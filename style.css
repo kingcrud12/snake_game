@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    font-family: 'Press Start 2P', cursive;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.game-container {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+h1 {
+    color: #4ecca3;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Styles du menu principal */
+#main-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.difficulty-selector {
+    margin-bottom: 1rem;
+}
+
+.difficulty-selector label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #4ecca3;
+}
+
+select {
+    font-family: 'Press Start 2P', cursive;
+    padding: 0.5rem;
+    background: #1a1a2e;
+    color: #4ecca3;
+    border: 2px solid #4ecca3;
+    border-radius: 5px;
+    width: 200px;
+    cursor: pointer;
+}
+
+button {
+    font-family: 'Press Start 2P', cursive;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    background: #4ecca3;
+    color: #1a1a2e;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: #3aa88f;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#return-menu {
+    margin-top: 1rem;
+    background: #ff6b6b;
+}
+
+#return-menu:hover {
+    background: #ff5252;
+}
+
+/* Styles de la zone de jeu */
+canvas {
+    border: 3px solid #4ecca3;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(78, 204, 163, 0.3);
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.score-container {
+    margin-top: 1.5rem;
+    font-size: 1.2rem;
+    color: #4ecca3;
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+}
+
+#score, #high-score {
+    color: #ff6b6b;
+    font-size: 1.4rem;
+}
+
+.controls {
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    color: #eeeeee;
+    opacity: 0.8;
+}
+
+/* Animation pour le score */
+@keyframes scoreChange {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.score-change {
+    animation: scoreChange 0.3s ease;
+}
+
+/* Responsive design */
+@media (max-width: 500px) {
+    .game-container {
+        padding: 1rem;
+        margin: 1rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    canvas {
+        width: 100%;
+        height: auto;
+    }
+
+    .score-container {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
