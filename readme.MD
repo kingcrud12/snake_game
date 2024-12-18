@@ -1,6 +1,6 @@
 # Snake Game 🐍
 
-Un jeu Snake classique développé en JavaScript vanilla avec des contrôles adaptés aussi bien pour ordinateur que pour appareils mobiles.
+Ce jeu est une version améliorée du Snake classique. Développé en JavaScript vanilla, il est aussi bien adapté pour des ordinateurs que pour appareils mobiles.
 
 ## 📝 Table des matières
 - [Aperçu](#aperçu)
