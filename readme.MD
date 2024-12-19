@@ -3,13 +3,16 @@
 Ce jeu est une version améliorée du Snake classique. Développé en vanilla JavaScript, il est aussi bien adapté pour des ordinateurs que pour des appareils mobiles.
 
 ## 📝 Table des matières
-- [Aperçu](#aperçu)
-- [Fonctionnalités](#fonctionnalités)
-- [Technologies utilisées](#technologies-utilisées)
-- [Installation](#installation)
-- [Comment jouer](#comment-jouer)
-- [Structure du projet](#structure-du-projet)
-- [Personnalisation](#personnalisation)
+- [Aperçu](#-aperçu)
+- [Fonctionnalités](#-fonctionnalités)
+- [Technologies utilisées](#-technologies-utilisées)
+- [Installation](#-installation)
+- [Comment jouer](#-comment-jouer)
+- [Structure du projet](#-structure-du-projet)
+- [Personnalisation](#-personnalisation)
+- [Contribution](#-contribution)
+- [Licence](#-licence)
+- [Contact](#-contact)
 
 ## 🎮 Aperçu
 Un jeu Snake moderne avec une interface rétro, proposant différents niveaux de difficulté et un système de meilleurs scores. Le jeu est entièrement responsive et jouable aussi bien sur ordinateur que sur mobile.
@@ -38,6 +41,7 @@ Un jeu Snake moderne avec une interface rétro, proposant différents niveaux de
 ```bash
 git clone https://github.com/votre-nom-de-utilisateur/snake-game.git
 ```
+
 2. Ouvrez le fichier `index.html` dans votre navigateur.
 
 3. Lancez le jeu en ouvrant `index.html` dans votre navigateur ou utilisez un serveur local.
@@ -60,14 +64,14 @@ git clone https://github.com/votre-nom-de-utilisateur/snake-game.git
 - **Difficile** : Vitesse rapide (40ms)
 
 ## 📁 Structure du projet
-
+```
 snake-game/
 │
 ├── index.html # Structure HTML principale
 ├── style.css # Styles et mise en page
 ├── game.js # Logique du jeu
-└── README.md #
-
+└── README.md
+```
 
 ### Description des fichiers
 
@@ -97,34 +101,28 @@ snake-game/
 
 ### Modification de la vitesse
 Dans `game.js`, ajustez les valeurs de `gameSpeed` :
-
+```javascript
 case 'easy': gameSpeed = 100; break;    // Plus lent
-
 case 'medium': gameSpeed = 70; break;   // Normal
-
 case 'hard': gameSpeed = 40; break;     // Plus rapide
-
+```
 
 ### Modification de la taille
 Dans `game.js`, ajustez les constantes :
-
+```javascript
 const gridSize = 20;  // Taille des cellules
-
 const tileCount = canvas.width / gridSize;  // Nombre de cellules
-
+```
 
 ### Modification des couleurs
 Dans `style.css`, modifiez les variables de couleur :
-
-/* Couleurs principales */
-
-#4ecca3  /* Vert - Couleur principale */
-
-#ff6b6b  /* Rouge - Nourriture */
-
-
-#1a1a2e  /* Bleu foncé - Arrière-plan */
-
+```css
+:root {
+  --primary-color: #4ecca3;    /* Vert - Couleur principale */
+  --food-color: #ff6b6b;       /* Rouge - Nourriture */
+  --background: #1a1a2e;       /* Bleu foncé - Arrière-plan */
+}
+```
 
 ## 🤝 Contribution
 Les contributions sont les bienvenues ! N'hésitez pas à ouvrir une issue ou à proposer une pull request.
@@ -133,6 +131,4 @@ Les contributions sont les bienvenues ! N'hésitez pas à ouvrir une issue ou à
 Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
 
 ## 📞 Contact
-Pour toute question ou suggestion, veuillez contacter [dipitay@gmail.com](dipitay@gmail.com).
-
-
+Pour toute question ou suggestion, veuillez contacter [dipitay@gmail.com](mailto:dipitay@gmail.com).
