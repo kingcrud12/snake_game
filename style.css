@@ -173,7 +173,12 @@ canvas {
 
     .score-container {
         flex-direction: column;
-        gap: 0.5rem;
+        gap: 2rem; /* Augmenté pour plus d'espace */
+    }
+
+    .score-container p span {
+        display: block;  /* Pour que le margin fonctionne */
+        margin-top: 1rem;  /* Espace entre les titres et leurs chiffres */
     }
 
     .touch-controls {
