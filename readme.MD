@@ -102,7 +102,7 @@ snake-game/
 ### Modification de la vitesse
 Dans `game.js`, ajustez les valeurs de `gameSpeed` :
 ```javascript
-case 'easy': gameSpeed = 800; break;    // Plus lent
+case 'easy': gameSpeed = 100; break;    // Plus lent
 case 'medium': gameSpeed = 70; break;   // Normal
 case 'hard': gameSpeed = 40; break;     // Plus rapide
 ```
