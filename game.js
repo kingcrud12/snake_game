@@ -39,7 +39,7 @@ startButton.addEventListener('click', () => {
     gameArea.style.display = 'block';
     
     switch(difficultySelect.value) {
-        case 'easy': gameSpeed = 1200; break;
+        case 'easy': gameSpeed = 900; break;
         case 'medium': gameSpeed = 70; break;
         case 'hard': gameSpeed = 40; break;
     }
